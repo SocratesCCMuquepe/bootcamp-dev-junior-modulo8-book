@@ -1,18 +1,24 @@
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let book of books">
-      <td>{{book.id}}</td>
-      <td>{{book.title}}</td>
-      <td>{{book.author}}</td>
-      <td>{{book.price}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <h3>Livros Cadastrados</h3>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{book.id}}</td>
+          <td>{{book.title}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.price}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
