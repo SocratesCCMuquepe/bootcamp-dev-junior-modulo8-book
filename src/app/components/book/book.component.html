@@ -1,19 +1,29 @@
-<p>book works!</p>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{abook.id}}</td>
-      <td>{{abook.title}}</td>
-      <td>{{abook.author}}</td>
-      <td>{{abook.price}}</td>
-    </tr>
-  </tbody>
-</table>
+
+<div class="container">
+  <h3>Cadastro</h3>
+  <form #formBook="ngForm">
+    <div class="row">
+      <label for="title" class="form-label">Titulo:</label>
+      <div>
+        <input type="text" class="form-control" [(ngModel)]="book.title" name="title" id="title" required>
+      </div>
+    </div>
+    <div class="row">
+      <label for="author" class="form-label">Autror:</label>
+      <div>
+        <input type="text" class="form-control" [(ngModel)]="book.author"  name="author" id="author" required>
+      </div>
+    </div>
+    <div class="row">
+      <label for="price" class="form-label">Preço:</label>
+      <div>
+        <input type="text" class="form-control" [(ngModel)]="book.price"  name="price" id="price" required>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div>
+        <button type="text" class="btn btn-primary" (click)="save()" [disabled]="formBook.invalid">Salvar</button>
+      </div>
+    </div>
+  </form>
+</div>

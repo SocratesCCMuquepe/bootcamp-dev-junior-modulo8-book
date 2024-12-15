@@ -8,6 +8,10 @@ import { Book } from '../../Book';
 })
 export class BooksComponent {
 
+  newBook: Book = {} as Book;
+  isUpdate = false;
+  idCount : number = 5;
+
   books: Book[] = [
     {
       id: 1,
@@ -26,6 +30,33 @@ export class BooksComponent {
       title: "Data Cience",
       author: "Miguel Malungo Malongui",
       price: 80.00
+    },
+    {
+      id: 4,
+      title: "SpringBoot para Iniciantes",
+      author: "Ernesto Sambongo",
+      price: 80.00
     }
   ];
+
+  saveBook() {
+    if (!this.isUpdate) {
+      this.newBook.id = this.idCount;
+      this.idCount++;
+      this.books.push(this.newBook);
+    }
+
+    this.newBook = {} as Book;
+    this.isUpdate = false;
+  }
+
+  updateBook(selectedBook: Book) {
+    this.newBook = selectedBook;
+    this.isUpdate = true;
+  }
+
+  removeBook(selectedBook: Book) {
+    this.books = this.books.filter(b => b !== selectedBook);
+  }
+
 }

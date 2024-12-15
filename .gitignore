@@ -22,7 +22,7 @@ chrome-profiler-events*.json
 .settings/
 *.sublime-workspace
 #Pasta com a Cache
-/.angular
+.angular/
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
